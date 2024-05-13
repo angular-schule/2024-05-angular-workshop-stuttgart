@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Book } from '../shared/book';
+import { BookComponent } from '../book/book.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [BookComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
