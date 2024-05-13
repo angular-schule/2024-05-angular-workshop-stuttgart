@@ -1,5 +1,7 @@
 @for (b of books; track b) {
-  <app-book [book]="b"></app-book>
+  <app-book [book]="b"
+    (rateUp)="doRateUpx(b)"
+    (rateDown)="doRateDownx($event)"></app-book>
 }
 
 <p>Anzahl Bücher: {{ books.length }}</p>
