@@ -1,1 +1,3 @@
-<app-book [book]="books[0]"></app-book>
+@for (b of books; track b) {
+  <app-book [book]="b"></app-book>
+}
