@@ -59,8 +59,15 @@ export class DashboardComponent {
         return b;
       }
     })
+
+
+    // this.books = this.books.map(b => b.isbn === ratedBook.isbn ? ratedBook : b)
   }
 }
+
+
+// Ternary Operator // Ternäroperator
+// const result = condition ? value1 : value2;
 
 
 
