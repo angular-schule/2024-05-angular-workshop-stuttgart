@@ -18,7 +18,7 @@ export class BookRatingService {
     }
 
     return {
-      ...book,
+      ...book, // Spread Operator
       rating: book.rating + 1
     }
   }
