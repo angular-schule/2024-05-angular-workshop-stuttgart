@@ -3,11 +3,12 @@ import { Book } from '../shared/book';
 import { BookComponent } from '../book/book.component';
 import { BookRatingService } from '../shared/book-rating.service';
 import { JsonPipe } from '@angular/common';
+import { DateComponent } from '../date/date.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [BookComponent, JsonPipe],
+  imports: [BookComponent, JsonPipe, DateComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
