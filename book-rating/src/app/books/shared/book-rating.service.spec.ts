@@ -47,7 +47,7 @@ describe('BookRatingService', () => {
     const ratedBook = service.rateUp(book)
 
     // Assert
-    expect(ratedBook.rating).toBe(4)
+    expect(ratedBook.rating).toBe(4);
   });
 
   it('should rate down a book by one', () => {

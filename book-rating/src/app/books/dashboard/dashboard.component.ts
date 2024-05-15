@@ -31,10 +31,6 @@ export class DashboardComponent {
   }
 
   doRateUpx(book: Book) {
-    // TODO:
-    // Service aufrufen
-    // Buch kommt zurück
-    // Buch in der Liste aktualisieren
     const ratedBook = this.rs.rateUp(book);
     this.updateList(ratedBook);
   }
@@ -53,7 +49,6 @@ export class DashboardComponent {
       }
     })
 
-
     // this.books = this.books.map(b => b.isbn === ratedBook.isbn ? ratedBook : b)
   }
 }
@@ -65,4 +60,4 @@ export class DashboardComponent {
 
 
 // [1,2,3,4,5].map(value => value * 10) // [10, 20, 30, 40, 50]
-// [1,2,3,4,5,6,7,8,9,10].filter(value => value < 5 || value > 9) // [1,2,3,4, 10]
+// [1,2,3,4,5,6,7,8,9,10].filter(value => value < 5) // [1,2,3,4]
