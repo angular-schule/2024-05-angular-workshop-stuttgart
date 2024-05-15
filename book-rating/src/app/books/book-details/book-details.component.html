@@ -1,6 +1,10 @@
-<p>book-details works!</p>
+@if (book) {
+  <h2>{{ book.title }}</h2>
 
+  <p>Beschreibung: {{ book.description }}</p>
 
+  <pre>{{ book | json }}</pre>
+}
 
 <a [routerLink]="['/books']">Zum Dashboard</a><br>
 <!--<a routerLink="/books">Zum Dashboard</a><br>-->
