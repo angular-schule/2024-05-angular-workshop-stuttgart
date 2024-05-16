@@ -1,1 +1,5 @@
-<p>book-search works!</p>
+<div class="form-group">
+  <input class="form-control" type="text" [formControl]="searchControl">
+</div>
+
+<pre>{{ searchControl.value }}</pre>

@@ -65,6 +65,10 @@ export class BookCreateComponent {
   }
 
   submitForm() {
+    if (this.bookForm.invalid) {
+      return;
+    }
+
     // TODO
     // - aus den Werten ein Buch erzeugen
     // - an den Server senden: BookStoreService create
