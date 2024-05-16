@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Subject, Subscription, timer } from 'rxjs';
+import { Subject, Subscription, take, takeUntil, takeWhile, timer } from 'rxjs';
 
 @Component({
   selector: 'app-error',
@@ -10,16 +10,26 @@ import { Subject, Subscription, timer } from 'rxjs';
 })
 export class ErrorComponent implements OnDestroy {
 
-  private sub: Subscription;
+  private destroy$ = new Subject<void>();
 
   constructor() {
-    this.sub = timer(0, 1000).subscribe(e => console.log(e));
+
+    // const notifier = timer(5500); // ----------------0|
+
+    timer(0, 1000).pipe(
+      // take(5)
+      // takeWhile(e => e < 10)
+      // takeUntil(notifier)
+      takeUntil(this.destroy$)
+    ).subscribe({
+      next: e => console.log(e),
+      complete: () => console.log('COMPLETE')
+    });
 
 
     /*const subject = new Subject<number>();
     subject.subscribe(e => console.log('A', e))
     subject.subscribe(e => console.log('B', e))
-
 
     subject.next(5);
 
@@ -30,6 +40,6 @@ export class ErrorComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.destroy$.next();
   }
 }
