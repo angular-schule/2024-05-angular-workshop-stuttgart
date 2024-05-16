@@ -1,6 +1,12 @@
 <div class="container">
   <h1>{{ title }}</h1>
 
+  <nav class="mb-3">
+    <a class="me-2" routerLink="/books">Dashboard</a>
+    <a class="me-2" routerLink="/books/search">Suche</a>
+    <a class="me-2" routerLink="/books/create">Erstellen</a>
+  </nav>
+
   <router-outlet></router-outlet>
 </div>
 
