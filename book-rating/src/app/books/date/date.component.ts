@@ -13,9 +13,11 @@ export class DateComponent implements OnDestroy {
 
   private interval = setInterval(() => {
     this.d = new Date();
+    console.log('DATE', this.d);
   }, 1000);
 
   ngOnDestroy() {
+    console.log('DESTROY DATEC')
     clearInterval(this.interval);
   }
 }
