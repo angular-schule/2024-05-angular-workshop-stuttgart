@@ -3,3 +3,20 @@
 </div>
 
 <pre>{{ searchControl.value }}</pre>
+
+
+<hr>
+
+
+<!--@if(results$ | async; as results) {
+  @for (book of results; track book.isbn) {
+    <p>{{ book.title }} ({{ book.isbn }})</p>
+  }
+}-->
+
+
+@for (book of results$ | async; track book.isbn) {
+  <p>{{ book.title }} ({{ book.isbn }})</p>
+} @empty {
+  <p>Keine Ergebnisse</p>
+}
